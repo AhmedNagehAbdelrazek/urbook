@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:urbook/features/onboarding/presentation/onboarding_view.dart';
 import 'package:urbook/features/splash/presentation/splash_view.dart';
 import 'page_route_name.dart';
 
@@ -10,9 +11,14 @@ class AppRouter {
           builder: (context) => const SplashView(),
           settings: settings,
         );
+      case PageRouteName.onboardingView:
+        return MaterialPageRoute(
+          builder: (context) => OnboardingView(),
+          settings: settings,
+        );
       default:
         return MaterialPageRoute(
-          builder: (context) => const SplashView(),
+          builder: (context) => OnboardingView(),
           settings: settings,
         );
     }

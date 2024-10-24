@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:urbook/core/routes/app_router.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/application_theme_manager.dart';
-
 import 'core/utils/assets_manager/assets_constant.dart';
 
 Future<void> main() async {
