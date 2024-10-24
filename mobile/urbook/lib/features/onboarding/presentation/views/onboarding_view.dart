@@ -1,12 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/core/utils/assets_manager/image_paths.dart';
-
-import 'widgets/on_boarding_Screen.dart';
-import 'widgets/onboarding_bottom_sheet.dart';
-import 'widgets/onboarding_button.dart';
+import '../widgets/on_boarding_Screen.dart';
+import '../widgets/onboarding_bottom_sheet.dart';
 
 class OnboardingView extends StatefulWidget {
   OnboardingView({super.key});

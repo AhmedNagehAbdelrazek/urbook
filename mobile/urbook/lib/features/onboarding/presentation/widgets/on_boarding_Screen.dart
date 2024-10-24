@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:urbook/core/utils/assets_manager/image_paths.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({
