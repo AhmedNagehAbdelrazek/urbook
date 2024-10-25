@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 
 class OnboardingButton extends StatelessWidget {
@@ -22,6 +23,7 @@ class OnboardingButton extends StatelessWidget {
       ),
       onPressed: () {
         if (isLastPage) {
+          Navigator.pushReplacementNamed(context, PageRouteName.signupView);
         } else {
           _controller.nextPage(
             duration: const Duration(milliseconds: 500),

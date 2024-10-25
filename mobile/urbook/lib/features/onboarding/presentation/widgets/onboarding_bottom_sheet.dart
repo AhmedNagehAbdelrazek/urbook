@@ -24,7 +24,10 @@ class OnboardingBottomSheet extends StatelessWidget {
       child: Column(
         children: [
           OnboardingButton(
-              isLastPage: isLastPage, controller: _controller, theme: theme),
+            isLastPage: isLastPage,
+            controller: _controller,
+            theme: theme,
+          ),
           const SizedBox(height: 20),
           SmoothPageIndicator(
             controller: _controller,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:urbook/features/auth/presentation/views/login_view.dart';
+import 'package:urbook/features/auth/presentation/views/signup_view.dart';
 import 'package:urbook/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:urbook/features/splash/presentation/views/splash_view.dart';
 import 'page_route_name.dart';
@@ -14,6 +16,16 @@ class AppRouter {
       case PageRouteName.onboardingView:
         return MaterialPageRoute(
           builder: (context) => OnboardingView(),
+          settings: settings,
+        );
+        case PageRouteName.signupView:
+        return MaterialPageRoute(
+          builder: (context) => const SignupView(),
+          settings: settings,
+        );
+         case PageRouteName.loginView:
+        return MaterialPageRoute(
+          builder: (context) => const LoginView(),
           settings: settings,
         );
       default:

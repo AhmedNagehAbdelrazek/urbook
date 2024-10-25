@@ -5,14 +5,44 @@ import 'package:urbook/core/utils/assets_manager/assets_constant.dart';
 class ApplicationThemeManager {
   static ThemeData lightThemeData = ThemeData(
     primaryColor: LightColorPalette.white,
-    primaryColorLight:LightColorPalette.cyan50 ,
-    
+    scaffoldBackgroundColor: LightColorPalette.white,
+    primaryColorLight: LightColorPalette.cyan50,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
+        side: const BorderSide(color: LightColorPalette.black, width: 1),
         backgroundColor: LightColorPalette.black,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
+      ),
+    ),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: LightColorPalette.white,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      labelStyle: const TextStyle(
+          fontFamily: AssetsConstant.fontName, color: LightColorPalette.black),
+      hintStyle: const TextStyle(
+          fontFamily: AssetsConstant.fontName, color: LightColorPalette.black),
+      hoverColor: LightColorPalette.cyan,
+      fillColor: LightColorPalette.cyan,
+      focusColor: LightColorPalette.cyan,
+      focusedBorder: OutlineInputBorder(
+        borderSide: const BorderSide(color: LightColorPalette.cyan, width: 3),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderSide: const BorderSide(color: LightColorPalette.cyan, width: 1),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.0),
+        borderSide: const BorderSide(color: BaseColorPalette.red),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.0),
+        borderSide: const BorderSide(color: BaseColorPalette.red, width: 3.0),
       ),
     ),
     textTheme: const TextTheme(
