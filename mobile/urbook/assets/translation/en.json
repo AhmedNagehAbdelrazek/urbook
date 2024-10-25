@@ -25,7 +25,8 @@
     "signup_with_google" : "Signup with Google",
     "Do_not_have_an_account" : "Do not have an account?",
     "forgot_password" : "Forgot password ?",
-    "privacy_policy" : "By login , you agree to our Privacy Policy and Terms & Conditions."
+    "privacy_policy" : "By login , you agree to our Privacy Policy and Terms & Conditions.",
+    "login_with_google" : "Login with Google"
 }
 
 

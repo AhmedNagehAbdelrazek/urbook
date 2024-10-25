@@ -52,7 +52,7 @@ class LoginViewBody extends StatelessWidget {
         const logInForm(),
         const SizedBox(height: 20.0),
         CustomElevatedButton(
-          text: 'signup_with_google',
+          text: 'login_with_google',
           onPressed: () {},
           backGroundColor: LightColorPalette.white,
           textColor: LightColorPalette.black,
