@@ -22,7 +22,10 @@
     "enter_your_password" : "Enter your password",
     "please_enter_your_full_name" : "Please enter your full name",
     "enter_your_full_name": "Enter your full name",
-    "signup_with_google" : "Signup with Google"
+    "signup_with_google" : "Signup with Google",
+    "Do_not_have_an_account" : "Do not have an account?",
+    "forgot_password" : "Forgot password ?",
+    "privacy_policy" : "By login , you agree to our Privacy Policy and Terms & Conditions."
 }
 
 

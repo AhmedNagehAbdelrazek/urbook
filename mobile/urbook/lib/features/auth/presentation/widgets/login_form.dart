@@ -1,19 +1,19 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
-class SignUpForm extends StatefulWidget {
-  const SignUpForm({super.key});
+class logInForm extends StatefulWidget {
+  const logInForm({super.key});
 
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  _logInFormState createState() => _logInFormState();
 }
 
-class _SignUpFormState extends State<SignUpForm> {
+class _logInFormState extends State<logInForm> {
   final _formKey = GlobalKey<FormState>();
   bool _obscureText = true;
 
-  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -24,13 +24,6 @@ class _SignUpFormState extends State<SignUpForm> {
     final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
     if (!emailRegex.hasMatch(value)) {
       return 'please_enter_a_valid_email'.tr();
-    }
-    return null;
-  }
-
-  String? _validateName(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'please_enter_your_full_name'.tr();
     }
     return null;
   }
@@ -53,21 +46,6 @@ class _SignUpFormState extends State<SignUpForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "full_name",
-            style: theme.textTheme.bodyLarge,
-          ).tr(),
-          const SizedBox(height: 8.0),
-          TextFormField(
-            controller: _nameController,
-            decoration: InputDecoration(
-              labelText: 'full_name'.tr(),
-              border: const OutlineInputBorder(),
-              hintText: 'enter_your_full_name'.tr(),
-            ),
-            validator: _validateName,
-          ),
-          const SizedBox(height: 16.0),
           Text(
             "email",
             style: theme.textTheme.bodyLarge,
@@ -108,9 +86,23 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             validator: _validatePassword,
           ),
-          const SizedBox(height: 60.0),
+          const SizedBox(height: 30.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              InkWell(
+                onTap: () {},
+                child: Text(
+                  "forgot_password",
+                  style: theme.textTheme.bodyLarge!
+                      .copyWith(color: LightColorPalette.cyan),
+                ).tr(),
+              ),
+            ],
+          ),
+          const SizedBox(height: 30.0),
           CustomElevatedButton(
-            text: 'create_account',
+            text: 'login',
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 ScaffoldMessenger.of(context).showSnackBar(
