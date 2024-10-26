@@ -25,7 +25,7 @@ class LoginViewBody extends StatelessWidget {
           height: mediaQury.height * 0.04,
         ),
         Text(
-          "signup",
+          "login",
           style: theme.textTheme.titleLarge,
         ).tr(),
         const SizedBox(height: 15.0),
@@ -49,7 +49,7 @@ class LoginViewBody extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 40.0),
-        const logInForm(),
+        const LogInForm(),
         const SizedBox(height: 20.0),
         CustomElevatedButton(
           text: 'login_with_google',

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:urbook/core/widgets/app_bar.dart';
-import 'package:urbook/features/auth/presentation/widgets/signup_view_body.dart';
+import 'package:urbook/features/auth/presentation/widgets/signup_widgets/signup_view_body.dart';
 
 class SignupView extends StatelessWidget {
   const SignupView({super.key});

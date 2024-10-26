@@ -1,9 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:urbook/core/themes/color_palette.dart';
-
-import '../utils/assets_manager/icon_paths.dart';
-
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     super.key,

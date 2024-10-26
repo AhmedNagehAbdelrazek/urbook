@@ -26,7 +26,22 @@
     "Do_not_have_an_account" : "Do not have an account?",
     "forgot_password" : "Forgot password ?",
     "privacy_policy" : "By login , you agree to our Privacy Policy and Terms & Conditions.",
-    "login_with_google" : "Login with Google"
+    "login_with_google" : "Login with Google",
+    "verification_code" : "Verification Code",
+    "email_verification" : "Email Verification",
+    "enter_the_6-digit_verification" : "Enter the 6-digit verification code sent to your email address.",
+    "proceed" : "Proceed",
+    "resend_code" : "Resend Code",
+    "send" : "Send",
+    "confirmation_email" : "Confirmation Email",
+    "Enter_your_email_address_for_verification" : "Enter your email address for verification.",
+    "new_password" : "New Password",
+    "enter_your_new_password_and_remember_it" : "Enter your new password and remember it.",
+    "confirm_password" : "Confirm Password",
+    "save" : "Save",
+    "new_password_set_successfully" : "New password set successfully",
+    "password_has_been_set_successfully" : "Congratulations! Your password has been set successfully. Please proceed to the login screen to verify your account."
+    
 }
 
 
