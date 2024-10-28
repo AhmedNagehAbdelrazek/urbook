@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:urbook/core/themes/color_palette.dart';
-import 'package:urbook/core/utils/assets_manager/assets_constant.dart';
+import 'package:urbook/core/constants/constants.dart';
 
 class ApplicationThemeManager {
   static ThemeData lightThemeData = ThemeData(
@@ -22,9 +22,9 @@ class ApplicationThemeManager {
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       labelStyle: const TextStyle(
-          fontFamily: AssetsConstant.fontName, color: LightColorPalette.black),
+          fontFamily: Constants.fontName, color: LightColorPalette.black),
       hintStyle: const TextStyle(
-          fontFamily: AssetsConstant.fontName, color: LightColorPalette.black),
+          fontFamily: Constants.fontName, color: LightColorPalette.black),
       hoverColor: LightColorPalette.cyan,
       fillColor: LightColorPalette.cyan,
       focusColor: LightColorPalette.cyan,
@@ -48,22 +48,22 @@ class ApplicationThemeManager {
     textTheme: const TextTheme(
       titleLarge: TextStyle(
           fontSize: 24,
-          fontFamily: AssetsConstant.fontName,
+          fontFamily: Constants.fontName,
           fontWeight: FontWeight.bold,
           color: LightColorPalette.black),
       bodyLarge: TextStyle(
           fontSize: 16,
-          fontFamily: AssetsConstant.fontName,
+          fontFamily: Constants.fontName,
           fontWeight: FontWeight.w500,
           color: LightColorPalette.black),
       bodyMedium: TextStyle(
           fontSize: 14,
-          fontFamily: AssetsConstant.fontName,
+          fontFamily: Constants.fontName,
           fontWeight: FontWeight.w500,
           color: LightColorPalette.black),
       bodySmall: TextStyle(
           fontSize: 12,
-          fontFamily: AssetsConstant.fontName,
+          fontFamily: Constants.fontName,
           fontWeight: FontWeight.w600,
           color: LightColorPalette.black),
     ),

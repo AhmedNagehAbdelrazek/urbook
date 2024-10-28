@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:urbook/core/routes/app_router.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/application_theme_manager.dart';
-import 'core/utils/assets_manager/assets_constant.dart';
+import 'core/constants/constants.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
@@ -16,7 +17,7 @@ Future<void> main() async {
         Locale('ru'),
       ],
       fallbackLocale: const Locale('en'),
-      path: AssetsConstant.translationPath,
+      path: Constants.translationPath,
       child: const MyApp()));
 }
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
+      navigatorKey: navigatorKey ,
       debugShowCheckedModeBanner: false,
       title: 'ur book',
       initialRoute: PageRouteName.initial,
