@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/core/utils/assets_manager/icon_paths.dart';
@@ -28,7 +29,7 @@ class LoginViewBody extends StatelessWidget {
           "login",
           style: theme.textTheme.titleLarge,
         ).tr(),
-        const SizedBox(height: 15.0),
+         SizedBox(height: 15.0.h),
         Row(
           children: [
             Text(
@@ -48,9 +49,9 @@ class LoginViewBody extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 40.0),
+         SizedBox(height: 40.0.h),
         const LogInForm(),
-        const SizedBox(height: 20.0),
+         SizedBox(height: 20.0.h),
         CustomElevatedButton(
           text: 'login_with_google',
           onPressed: () {},
@@ -59,7 +60,7 @@ class LoginViewBody extends StatelessWidget {
           haveIcon: true,
           iconPath: IconPaths.google,
         ),
-        const SizedBox(height: 150),
+         SizedBox(height: 150.h),
         Align(
           alignment: Alignment.center,
           child: Padding(

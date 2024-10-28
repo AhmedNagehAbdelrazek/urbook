@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
@@ -23,7 +24,7 @@ class CustomElevatedButton extends StatelessWidget {
     var theme = Theme.of(context);
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          minimumSize: Size(mediaQuery.width, 60),
+          minimumSize: Size(mediaQuery.width.w, 60.h),
           backgroundColor: backGroundColor),
       onPressed: onPressed,
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [

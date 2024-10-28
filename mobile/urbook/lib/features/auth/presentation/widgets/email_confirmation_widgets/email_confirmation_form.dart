@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
 class EmailConfirmationForm extends StatefulWidget {
@@ -37,7 +38,7 @@ class _EmailConfirmationFormState extends State<EmailConfirmationForm> {
             "email",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-          const SizedBox(height: 8.0),
+           SizedBox(height: 8.0.h),
           TextFormField(
             controller: _emailController,
             decoration: InputDecoration(
@@ -47,8 +48,8 @@ class _EmailConfirmationFormState extends State<EmailConfirmationForm> {
             ),
             validator: _validateEmail,
           ),
-          const SizedBox(height: 16.0),
-          const SizedBox(height: 30.0),
+           SizedBox(height: 16.0.h),
+           SizedBox(height: 30.0.h),
           CustomElevatedButton(
             text: 'send',
             onPressed: () {

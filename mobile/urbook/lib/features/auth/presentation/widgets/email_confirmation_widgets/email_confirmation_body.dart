@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'email_confirmation_form.dart';
 
 class EmailConfirmationBody extends StatelessWidget {
@@ -19,21 +19,21 @@ class EmailConfirmationBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: mediaQury.height * 0.04,
+          height: mediaQury.height * 0.04.h,
         ),
         Text(
           "confirmation_email",
           style: theme.textTheme.titleLarge,
         ).tr(),
-        const SizedBox(height: 15.0),
+         SizedBox(height: 15.0.h),
         Text(
           'Enter_your_email_address_for_verification',
           style: theme.textTheme.bodyMedium,
         ).tr(),
-        const SizedBox(height: 40.0),
+         SizedBox(height: 40.0.h),
         const EmailConfirmationForm(),
-        const SizedBox(height: 20.0),
-        const SizedBox(height: 150),
+         SizedBox(height: 20.0.h),
+         SizedBox(height: 150.h),
       ],
     );
   }

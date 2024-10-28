@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/app_router.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/application_theme_manager.dart';
@@ -26,16 +27,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      navigatorKey: navigatorKey ,
-      debugShowCheckedModeBanner: false,
-      title: 'ur book',
-      initialRoute: PageRouteName.initial,
-      onGenerateRoute: AppRouter.onGenerateRoute,
-      theme: ApplicationThemeManager.lightThemeData,
-    );
+    return ScreenUtilInit(
+        designSize: const Size(360, 800),
+        builder: (context, child) {
+          return MaterialApp(
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
+            navigatorKey: navigatorKey,
+            debugShowCheckedModeBanner: false,
+            title: 'ur book',
+            initialRoute: PageRouteName.initial,
+            onGenerateRoute: AppRouter.onGenerateRoute,
+            theme: ApplicationThemeManager.lightThemeData,
+          );
+        });
   }
 }

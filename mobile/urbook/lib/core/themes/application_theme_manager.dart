@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/core/constants/constants.dart';
 
@@ -20,7 +21,7 @@ class ApplicationThemeManager {
       backgroundColor: LightColorPalette.white,
     ),
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      contentPadding:  const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       labelStyle: const TextStyle(
           fontFamily: Constants.fontName, color: LightColorPalette.black),
       hintStyle: const TextStyle(
@@ -45,24 +46,24 @@ class ApplicationThemeManager {
         borderSide: const BorderSide(color: BaseColorPalette.red, width: 3.0),
       ),
     ),
-    textTheme: const TextTheme(
+    textTheme:  TextTheme(
       titleLarge: TextStyle(
-          fontSize: 24,
+          fontSize: 24.sp,
           fontFamily: Constants.fontName,
           fontWeight: FontWeight.bold,
           color: LightColorPalette.black),
       bodyLarge: TextStyle(
-          fontSize: 16,
+          fontSize: 16.sp,
           fontFamily: Constants.fontName,
           fontWeight: FontWeight.w500,
           color: LightColorPalette.black),
       bodyMedium: TextStyle(
-          fontSize: 14,
+          fontSize: 14.sp,
           fontFamily: Constants.fontName,
           fontWeight: FontWeight.w500,
           color: LightColorPalette.black),
       bodySmall: TextStyle(
-          fontSize: 12,
+          fontSize: 12.sp,
           fontFamily: Constants.fontName,
           fontWeight: FontWeight.w600,
           color: LightColorPalette.black),

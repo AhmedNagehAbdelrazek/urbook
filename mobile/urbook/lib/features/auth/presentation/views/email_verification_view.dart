@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
@@ -80,7 +81,7 @@ class _EmailVerificationViewState extends State<EmailVerificationView> {
               'email_verification',
               style: theme.textTheme.titleLarge,
             ).tr(),
-            const SizedBox(height: 10),
+             SizedBox(height: 10.h),
             Text(
               'enter_the_6-digit_verification',
               style: theme.textTheme.bodyMedium,
@@ -97,7 +98,7 @@ class _EmailVerificationViewState extends State<EmailVerificationView> {
                     keyboardType: TextInputType.number,
                     maxLength: 1,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 20),
+                    style:  TextStyle(fontSize: 20.sp),
                     decoration: InputDecoration(
                       counterText: '',
                       border: OutlineInputBorder(
@@ -109,7 +110,7 @@ class _EmailVerificationViewState extends State<EmailVerificationView> {
                 );
               }),
             ),
-            const SizedBox(height: 20),
+             SizedBox(height: 20.w),
             Align(
               alignment: Alignment.center,
               child: TextButton(
@@ -120,7 +121,7 @@ class _EmailVerificationViewState extends State<EmailVerificationView> {
                     .tr(),
               ),
             ),
-            const SizedBox(height: 20),
+             SizedBox(height: 20.h),
             CustomElevatedButton(onPressed: _proceed, text: 'proceed')
           ],
         ),

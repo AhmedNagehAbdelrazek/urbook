@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
+import 'package:urbook/core/themes/application_theme_manager.dart';
 import 'package:urbook/core/utils/assets_manager/image_paths.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
@@ -12,7 +14,7 @@ class PasswordCreatedSuccessfullyView extends StatelessWidget {
     var theme = Theme.of(context);
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding:  EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

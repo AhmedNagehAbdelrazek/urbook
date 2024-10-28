@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
@@ -40,7 +41,7 @@ class _CreatePasswordFormState extends State<CreatePasswordForm> {
             "password",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-          const SizedBox(height: 8.0),
+           SizedBox(height: 8.0.h),
           TextFormField(
             controller: _passwordController,
             obscureText: _obscureText,
@@ -61,12 +62,12 @@ class _CreatePasswordFormState extends State<CreatePasswordForm> {
             ),
             validator: _validatePassword,
           ),
-          const SizedBox(height: 30.0),
+           SizedBox(height: 30.0.h),
           Text(
             "confirm_password",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-          const SizedBox(height: 8.0),
+           SizedBox(height: 8.0.h),
           TextFormField(
             controller: _confirmPasswordController,
             obscureText: _obscureText,
@@ -87,7 +88,7 @@ class _CreatePasswordFormState extends State<CreatePasswordForm> {
             ),
             validator: _validatePassword,
           ),
-          const SizedBox(height: 30.0),
+           SizedBox(height: 30.0.h),
           CustomElevatedButton(
             text: 'save',
             onPressed: () {

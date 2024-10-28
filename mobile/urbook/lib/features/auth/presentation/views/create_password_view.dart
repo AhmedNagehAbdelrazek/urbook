@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/features/auth/presentation/widgets/create_password_Widgets/create_password_view_body.dart';
 
 class CreatePasswordView extends StatelessWidget {
@@ -19,7 +20,7 @@ class CreatePasswordView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding:  EdgeInsets.symmetric(horizontal: 20.w),
           child: CreatePasswordViewBody(
             theme: theme,
             mediaQury: mediaQury,

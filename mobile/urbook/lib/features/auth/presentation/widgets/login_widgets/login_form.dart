@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
@@ -51,7 +52,7 @@ class _LogInFormState extends State<LogInForm> {
             "email",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-          const SizedBox(height: 8.0),
+           SizedBox(height: 8.0.h),
           TextFormField(
             controller: _emailController,
             decoration: InputDecoration(
@@ -61,12 +62,12 @@ class _LogInFormState extends State<LogInForm> {
             ),
             validator: _validateEmail,
           ),
-          const SizedBox(height: 16.0),
+           SizedBox(height: 16.0.h),
           Text(
             "password",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-          const SizedBox(height: 8.0),
+           SizedBox(height: 8.0.h),
           TextFormField(
             controller: _passwordController,
             obscureText: _obscureText,
@@ -87,7 +88,7 @@ class _LogInFormState extends State<LogInForm> {
             ),
             validator: _validatePassword,
           ),
-          const SizedBox(height: 30.0),
+           SizedBox(height: 30.0.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -104,7 +105,7 @@ class _LogInFormState extends State<LogInForm> {
               ),
             ],
           ),
-          const SizedBox(height: 30.0),
+          SizedBox(height: 30.0.h),
           CustomElevatedButton(
             text: 'login',
             onPressed: () {

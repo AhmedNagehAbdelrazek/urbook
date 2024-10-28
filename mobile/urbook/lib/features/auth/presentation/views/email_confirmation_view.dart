@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widgets/email_confirmation_widgets/email_confirmation_body.dart';
 
@@ -20,7 +21,7 @@ class EmailConfirmationView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding:  EdgeInsets.symmetric(horizontal: 20.w),
           child: EmailConfirmationBody(
             mediaQury: mediaQury,
             theme: theme,
