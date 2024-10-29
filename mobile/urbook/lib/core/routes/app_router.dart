@@ -5,6 +5,7 @@ import 'package:urbook/features/auth/presentation/views/email_verification_view.
 import 'package:urbook/features/auth/presentation/views/login_view.dart';
 import 'package:urbook/features/auth/presentation/views/password_created_successfully_view.dart';
 import 'package:urbook/features/auth/presentation/views/signup_view.dart';
+import 'package:urbook/features/layout/presentation/views/layout_view.dart';
 import 'package:urbook/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:urbook/features/splash/presentation/views/splash_view.dart';
 import 'page_route_name.dart';
@@ -47,9 +48,14 @@ class AppRouter {
           builder: (context) => const CreatePasswordView(),
           settings: settings,
         );
-        case PageRouteName.passwordCreatedSuccessfullyView:
+      case PageRouteName.passwordCreatedSuccessfullyView:
         return MaterialPageRoute(
           builder: (context) => const PasswordCreatedSuccessfullyView(),
+          settings: settings,
+        );
+      case PageRouteName.layoutView:
+        return MaterialPageRoute(
+          builder: (context) => const LayoutView(),
           settings: settings,
         );
       default:

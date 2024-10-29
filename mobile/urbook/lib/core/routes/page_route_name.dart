@@ -8,7 +8,7 @@ class PageRouteName {
   static const String createPasswordView = '/createPasswordView';
   static const String passwordCreatedSuccessfullyView =
       '/passwordCreatedSuccessfullyView';
+  static const String layoutView = '/layoutView';
 
 
-      
 }
