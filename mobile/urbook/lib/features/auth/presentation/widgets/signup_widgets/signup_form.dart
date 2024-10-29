@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
-import 'package:urbook/core/themes/application_theme_manager.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -60,7 +59,7 @@ class _SignUpFormState extends State<SignUpForm> {
             "full_name",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-           SizedBox(height: 8.0.h),
+          SizedBox(height: 8.0.h),
           TextFormField(
             controller: _nameController,
             decoration: InputDecoration(
@@ -70,12 +69,12 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             validator: _validateName,
           ),
-           SizedBox(height: 16.0.h),
+          SizedBox(height: 16.0.h),
           Text(
             "email",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-           SizedBox(height: 8.0.h),
+          SizedBox(height: 8.0.h),
           TextFormField(
             controller: _emailController,
             decoration: InputDecoration(
@@ -85,12 +84,12 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             validator: _validateEmail,
           ),
-           SizedBox(height: 16.0.h),
+          SizedBox(height: 16.0.h),
           Text(
             "password",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-           SizedBox(height: 8.0.h),
+          SizedBox(height: 8.0.h),
           TextFormField(
             controller: _passwordController,
             obscureText: _obscureText,
@@ -111,7 +110,7 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             validator: _validatePassword,
           ),
-           SizedBox(height: 60.0.h),
+          SizedBox(height: 60.0.h),
           CustomElevatedButton(
             text: 'create_account',
             onPressed: () {
