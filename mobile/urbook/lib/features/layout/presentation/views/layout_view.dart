@@ -1,12 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:urbook/core/constants/icon_paths.dart';
-import 'package:urbook/features/categories/presentation/pages/categories_view.dart';
-import 'package:urbook/features/home/presentation/pages/home_view.dart';
 import 'package:urbook/features/layout/presentation/views/layout_helper.dart';
-import 'package:urbook/features/my_cart/presentation/pages/my_cart_view.dart';
-import 'package:urbook/features/profile/presentation/pages/profile_view.dart';
-import 'package:urbook/features/wish_list/presentation/pages/wish_list_view.dart';
+
 
 class LayoutView extends StatefulWidget {
   const LayoutView({super.key});
