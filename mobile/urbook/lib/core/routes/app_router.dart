@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:urbook/features/auth/presentation/views/create_password_view.dart';
-import 'package:urbook/features/auth/presentation/views/email_confirmation_view.dart';
-import 'package:urbook/features/auth/presentation/views/email_verification_view.dart';
-import 'package:urbook/features/auth/presentation/views/login_view.dart';
-import 'package:urbook/features/auth/presentation/views/password_created_successfully_view.dart';
-import 'package:urbook/features/auth/presentation/views/signup_view.dart';
-import 'package:urbook/features/layout/presentation/views/layout_view.dart';
-import 'package:urbook/features/onboarding/presentation/views/onboarding_view.dart';
-import 'package:urbook/features/splash/presentation/views/splash_view.dart';
-import 'page_route_name.dart';
+import 'package:urbook/core/routes/app_views.dart';
 
 class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -56,6 +47,31 @@ class AppRouter {
       case PageRouteName.layoutView:
         return MaterialPageRoute(
           builder: (context) => const LayoutView(),
+          settings: settings,
+        );
+        case PageRouteName.homeView:
+        return MaterialPageRoute(
+          builder: (context) => const HomeView(),
+          settings: settings,
+        );
+        case PageRouteName.wishListView:
+        return MaterialPageRoute(
+          builder: (context) => const WishListView(),
+          settings: settings,
+        );
+        case PageRouteName.profileView:
+        return MaterialPageRoute(
+          builder: (context) => const ProfileView(),
+          settings: settings,
+        );
+        case PageRouteName.myCartView:
+        return MaterialPageRoute(
+          builder: (context) => const MyCartView(),
+          settings: settings,
+        );
+        case PageRouteName.categoriesView:
+        return MaterialPageRoute(
+          builder: (context) => const CategoriesView(),
           settings: settings,
         );
       default:

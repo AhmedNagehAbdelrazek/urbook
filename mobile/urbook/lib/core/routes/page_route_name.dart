@@ -9,6 +9,14 @@ class PageRouteName {
   static const String passwordCreatedSuccessfullyView =
       '/passwordCreatedSuccessfullyView';
   static const String layoutView = '/layoutView';
+  static const String categoriesView = '/categoriesView';
+  static const String homeView = '/homeView';
+  static const String profileView = '/profileView';
+  static const String myCartView = '/myCartView';
+  static const String wishListView = '/wishListView';
+
+
+  
 
 
 }
