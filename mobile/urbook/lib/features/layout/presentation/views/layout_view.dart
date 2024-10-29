@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:urbook/core/constants/icon_paths.dart';
 import 'package:urbook/features/categories/presentation/pages/categories_view.dart';
 import 'package:urbook/features/home/presentation/pages/home_view.dart';
+import 'package:urbook/features/layout/presentation/views/layout_helper.dart';
 import 'package:urbook/features/my_cart/presentation/pages/my_cart_view.dart';
 import 'package:urbook/features/profile/presentation/pages/profile_view.dart';
 import 'package:urbook/features/wish_list/presentation/pages/wish_list_view.dart';
@@ -27,7 +28,7 @@ class _LayoutViewState extends State<LayoutView> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-          child: _getSelectedPage(_currentIndex),
+          child: getSelectedPage(_currentIndex),
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
@@ -67,22 +68,5 @@ class _LayoutViewState extends State<LayoutView> {
             ),
           ],
         ));
-  }
-
-  Widget _getSelectedPage(int index) {
-    switch (index) {
-      case 0:
-        return const HomeView();
-      case 1:
-        return const CategoriesView();
-      case 2:
-        return const MyCartView();
-      case 3:
-        return const WishListView();
-      case 4:
-        return const ProfileView();
-      default:
-        return const Text("Home Page");
-    }
   }
 }
