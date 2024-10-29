@@ -5,6 +5,12 @@ class WishListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      body: Center(
+          child: Text(
+        "With List View",
+        style: TextStyle(fontSize: 50),
+      )),
+    );
   }
 }

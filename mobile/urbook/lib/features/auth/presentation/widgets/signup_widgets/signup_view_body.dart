@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/color_palette.dart';
-import 'package:urbook/core/utils/assets_manager/icon_paths.dart';
+import 'package:urbook/core/constants/icon_paths.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
 import 'signup_form.dart';

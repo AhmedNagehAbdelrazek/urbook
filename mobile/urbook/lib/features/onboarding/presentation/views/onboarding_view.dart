@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:urbook/core/utils/assets_manager/image_paths.dart';
+import 'package:urbook/core/constants/image_paths.dart';
 import '../widgets/on_boarding_Screen.dart';
 import '../widgets/onboarding_bottom_sheet.dart';
 

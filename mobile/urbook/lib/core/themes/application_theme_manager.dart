@@ -17,11 +17,37 @@ class ApplicationThemeManager {
         ),
       ),
     ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
+      backgroundColor: LightColorPalette.white,
+      selectedItemColor: LightColorPalette.black,
+      selectedIconTheme: const IconThemeData(
+        size: 35,
+        color: LightColorPalette.cyan,
+      ),
+      selectedLabelStyle: TextStyle(
+        fontSize: 16.sp,
+        fontFamily: Constants.fontName,
+        fontWeight: FontWeight.w700,
+      ),
+      unselectedLabelStyle: TextStyle(
+        fontSize: 14.sp,
+        fontFamily: Constants.fontName,
+        fontWeight: FontWeight.w300,
+      ),
+      unselectedItemColor: LightColorPalette.black,
+      unselectedIconTheme: const IconThemeData(
+        size: 28,
+        color: LightColorPalette.black,
+      ),
+    ),
     appBarTheme: const AppBarTheme(
       backgroundColor: LightColorPalette.white,
     ),
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding:  const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       labelStyle: const TextStyle(
           fontFamily: Constants.fontName, color: LightColorPalette.black),
       hintStyle: const TextStyle(
@@ -46,7 +72,7 @@ class ApplicationThemeManager {
         borderSide: const BorderSide(color: BaseColorPalette.red, width: 3.0),
       ),
     ),
-    textTheme:  TextTheme(
+    textTheme: TextTheme(
       titleLarge: TextStyle(
           fontSize: 24.sp,
           fontFamily: Constants.fontName,

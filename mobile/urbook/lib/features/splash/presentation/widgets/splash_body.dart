@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:urbook/core/utils/assets_manager/image_paths.dart';
+import 'package:urbook/core/constants/image_paths.dart';
 
 class SplashBody extends StatelessWidget {
   const SplashBody({

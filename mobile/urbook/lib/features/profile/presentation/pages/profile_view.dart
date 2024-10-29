@@ -5,6 +5,12 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      body: Center(
+          child: Text(
+        "Profile View",
+        style: TextStyle(fontSize: 50),
+      )),
+    );
   }
 }

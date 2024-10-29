@@ -40,7 +40,13 @@
     "confirm_password" : "Confirm Password",
     "save" : "Save",
     "new_password_set_successfully" : "New password set successfully",
-    "password_has_been_set_successfully" : "Congratulations! Your password has been set successfully. Please proceed to the login screen to verify your account."
+    "password_has_been_set_successfully" : "Congratulations! Your password has been set successfully. Please proceed to the login screen to verify your account.",
+    "home" : "Home",
+    "categories" : "Categories" , 
+    "my_card" : "My Card",
+    "wishList" : "WishList",
+    "profile" : "Profile"
+
     
 }
 

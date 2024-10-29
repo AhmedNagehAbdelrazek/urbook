@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/assets_manager/image_paths.dart';
+import '../constants/image_paths.dart';
 
 AppBar customAppBar() {
     return AppBar(

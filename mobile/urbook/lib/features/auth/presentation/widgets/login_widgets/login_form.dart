@@ -52,7 +52,7 @@ class _LogInFormState extends State<LogInForm> {
             "email",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-           SizedBox(height: 8.0.h),
+          SizedBox(height: 8.0.h),
           TextFormField(
             controller: _emailController,
             decoration: InputDecoration(
@@ -62,12 +62,12 @@ class _LogInFormState extends State<LogInForm> {
             ),
             validator: _validateEmail,
           ),
-           SizedBox(height: 16.0.h),
+          SizedBox(height: 16.0.h),
           Text(
             "password",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-           SizedBox(height: 8.0.h),
+          SizedBox(height: 8.0.h),
           TextFormField(
             controller: _passwordController,
             obscureText: _obscureText,
@@ -88,7 +88,7 @@ class _LogInFormState extends State<LogInForm> {
             ),
             validator: _validatePassword,
           ),
-           SizedBox(height: 30.0.h),
+          SizedBox(height: 30.0.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -110,9 +110,8 @@ class _LogInFormState extends State<LogInForm> {
             text: 'login',
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Processing Data')),
-                );
+                Navigator.pushReplacementNamed(
+                    context, PageRouteName.layoutView);
               }
             },
           ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/application_theme_manager.dart';
-import 'package:urbook/core/utils/assets_manager/image_paths.dart';
+import 'package:urbook/core/constants/image_paths.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
 class PasswordCreatedSuccessfullyView extends StatelessWidget {

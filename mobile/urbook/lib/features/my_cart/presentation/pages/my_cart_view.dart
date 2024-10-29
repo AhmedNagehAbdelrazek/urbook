@@ -5,6 +5,12 @@ class MyCartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      body: Center(
+          child: Text(
+        "My Card View",
+        style: TextStyle(fontSize: 50),
+      )),
+    );
   }
 }
