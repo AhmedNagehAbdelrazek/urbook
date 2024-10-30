@@ -19,7 +19,7 @@ class OnboardingBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: mediaQuery.height * 0.18,
       child: Column(
         children: [

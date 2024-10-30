@@ -19,7 +19,7 @@ class PasswordCreatedSuccessfullyView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(vertical: 30),
+              padding: const EdgeInsets.symmetric(vertical: 30),
               width: double.infinity,
               decoration: BoxDecoration(
                 color: theme.primaryColorLight,
