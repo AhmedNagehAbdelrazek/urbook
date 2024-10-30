@@ -1,0 +1,15 @@
+{
+
+   
+    "next" : "Next",
+    "onboardingText1" : "Explore a wide range of products" ,
+    "onboardingText2" : "Unlock exclusive offers and discounts" ,
+    "onboardingText3" : "Safe and secure payments" ,
+    "onboardingDescription1" : "Explore a wide range of products at your fingertips. QuickMart offers an extensive collection to suit your needs.",
+    "onboardingDescription2" : "Get access to limited-time deals and special promotions available only to our valued customers.",
+    "onboardingDescription3" : "QuickMart employs industry-leading encryption and trusted payment gateways to safeguard your financial information.",
+     "signup" : "Signup",
+      "alreadyHaveAnaccount" : "Already have an account?",
+    "login" : "Login"
+   
+}
