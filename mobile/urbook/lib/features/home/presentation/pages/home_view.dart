@@ -1,7 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/constants/icon_paths.dart';
 import 'package:urbook/core/constants/image_paths.dart';
+import 'package:urbook/core/themes/color_palette.dart';
+import 'package:urbook/features/home/presentation/widgets/categories_options_view.dart';
 import '../widgets/exclusive_sales_cards_view.dart';
+import '../widgets/latest_products_row.dart';
+import '../widgets/latest_products_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -35,7 +41,10 @@ class HomeView extends StatelessWidget {
           ),
           SliverList(
             delegate: SliverChildListDelegate([
-              ExclusiveSalesCardsView(),
+              const ExclusiveSalesCardsView(),
+              const CategoriesOptionsView(),
+              const LatestProductsRow(),
+              const LatestProductsView()
             ]),
           ),
         ],

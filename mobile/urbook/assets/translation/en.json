@@ -45,7 +45,14 @@
     "categories" : "Categories" , 
     "my_card" : "My Card",
     "wishList" : "WishList",
-    "profile" : "Profile"
+    "profile" : "Profile",
+    "see_all" : "SEE ALL",
+    "electronics" : "Electronics",
+    "fashion" : "Fashion" ,
+    "furniture" : "Furniture",
+    "industrial" : "Industrial",
+    "latest_products" : "Latest Products"
+    
 
     
 }

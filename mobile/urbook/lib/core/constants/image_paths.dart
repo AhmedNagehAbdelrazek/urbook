@@ -11,4 +11,8 @@ class ImagePaths {
   static const String me = 'assets/images/me.jpeg';
   static const String test = 'assets/images/test.jpg';
   static const String test2 = 'assets/images/test2.jpg';
+  static const String electronics = 'assets/images/electronics.png';
+  static const String fashion = 'assets/images/fashion.png';
+  static const String furniture = 'assets/images/furniture.png';
+  static const String industrial = 'assets/images/industrial.png';
 }

@@ -44,7 +44,7 @@ class _ExclusiveSalesCardsViewState extends State<ExclusiveSalesCardsView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 15.h),
       height: 160.h,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -88,8 +88,8 @@ class _ExclusiveSalesCardsViewState extends State<ExclusiveSalesCardsView> {
                 controller: _controller,
                 count: 4,
                 effect: WormEffect(
-                  dotHeight: 8.h,
-                  dotWidth: 8.w,
+                  dotHeight: 5.h,
+                  dotWidth: 5.w,
                   activeDotColor: LightColorPalette.cyan,
                   dotColor: Colors.grey.shade300,
                 ),
