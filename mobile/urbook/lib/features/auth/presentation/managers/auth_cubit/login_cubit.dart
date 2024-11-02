@@ -27,7 +27,7 @@ class AuthCubit extends Cubit<AuthState> {
     return result.fold(
       (fail) {
         var error = fail as ServerFailure;
-        log(error.errMessage ?? "");
+        log(error.errMessage );
         emit(LoginFailure());
         return Future.value(false);
       },
