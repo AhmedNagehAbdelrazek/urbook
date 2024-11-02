@@ -5,6 +5,8 @@ import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
+import '../../managers/auth_cubit/login_cubit.dart';
+
 class LogInForm extends StatefulWidget {
   const LogInForm({super.key});
 
@@ -43,6 +45,7 @@ class _LogInFormState extends State<LogInForm> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var cubitManager = AuthCubit.get(context);
     return Form(
       key: _formKey,
       child: Column(
@@ -108,10 +111,20 @@ class _LogInFormState extends State<LogInForm> {
           SizedBox(height: 30.0.h),
           CustomElevatedButton(
             text: 'login',
-            onPressed: () {
+            onPressed: () async {
               if (_formKey.currentState!.validate()) {
-                Navigator.pushReplacementNamed(
-                    context, PageRouteName.layoutView);
+                cubitManager
+                    .login(
+                  email: _emailController.text.toString().trim(),
+                  password: _passwordController.text.toString().trim(),
+                )
+                    .then((value) {
+                  if (value) {
+                    print("77777777777777777777777777777777");
+                  } else {
+                    print("999999999999999999999999999999");
+                  }
+                });
               }
             },
           ),

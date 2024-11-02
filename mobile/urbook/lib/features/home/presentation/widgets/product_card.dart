@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/constants/icon_paths.dart';
 import 'package:urbook/core/themes/color_palette.dart';
@@ -15,9 +14,10 @@ class ProductCard extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 5.w),
+        padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.w),
+        margin: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.w),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: LightColorPalette.grey50,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
@@ -29,9 +29,9 @@ class ProductCard extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                          color: LightColorPalette.cyan, width: 0.4)),
+                          color: LightColorPalette.cyan, width: 0.5)),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(15),
                     child: Image.network(
                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe99Qmooaqix7uhJmJCZ6teDP6NDvT8VwgWQ&s',
                       fit: BoxFit.cover,

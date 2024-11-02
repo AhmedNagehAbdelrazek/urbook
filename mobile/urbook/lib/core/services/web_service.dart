@@ -1,10 +1,12 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:urbook/core/constants/constants.dart';
 
 class WebService {
   static WebService? _this;
+  static const _storage = FlutterSecureStorage();
 
   factory WebService() {
     _this ??= WebService._();
@@ -17,6 +19,7 @@ class WebService {
   String lang = 'en';
   String? myToken;
   final String storageKeyMobileToken = 'Authorization';
+  final String tokenKey = 'auth_token';
 
   WebService._() {
     freeDio.options.connectTimeout = const Duration(milliseconds: 300);
@@ -24,15 +27,18 @@ class WebService {
 
     tokenDio.options.connectTimeout = const Duration(milliseconds: 300);
     tokenDio.options.baseUrl = Constants.domain;
-    _initializeTokenDioInterceptor();
+    _initializeDioInterceptor();
+    _loadToken();
   }
 
-  void _initializeTokenDioInterceptor() {
+  void _initializeDioInterceptor() {
     freeDio.interceptors.clear();
     tokenDio.interceptors.clear();
+
     freeDio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
+          options.headers["Content-Type"] = "application/json";
           debugPrint(
               'send request : BaseURL:${options.baseUrl} path:${options.path}');
           debugPrint('headers:${options.headers}');
@@ -61,6 +67,7 @@ class WebService {
     tokenDio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
+          options.headers["Content-Type"] = "application/json";
           if (myToken != null) {
             options.headers[storageKeyMobileToken] = "Bearer $myToken";
           }
@@ -84,5 +91,20 @@ class WebService {
         },
       ),
     );
+  }
+
+  Future<void> saveToken(String token) async {
+    myToken = token;
+    await _storage.write(key: tokenKey, value: token);
+  }
+
+  Future<void> _loadToken() async {
+    myToken = await _storage.read(key: tokenKey);
+    debugPrint('Loaded token: $myToken');
+  }
+
+  Future<void> clearToken() async {
+    myToken = null;
+    await _storage.delete(key: tokenKey);
   }
 }

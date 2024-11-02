@@ -22,6 +22,9 @@ dependencies:
   dio: ^5.7.0
   flutter_screenutil: ^5.9.3
   flutter_bloc: ^8.1.6
+  animate_do: ^3.3.4
+  flutter_secure_storage: ^9.2.2
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
