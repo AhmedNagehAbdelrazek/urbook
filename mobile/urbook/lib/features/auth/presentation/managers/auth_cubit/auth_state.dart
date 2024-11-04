@@ -1,0 +1,17 @@
+part of 'auth_cubit.dart';
+
+sealed class AuthState {}
+
+final class AuthInitial extends AuthState {}
+
+final class LoginSuccess extends AuthState {}
+
+final class LoginFailure extends AuthState {}
+
+final class SginupSuccess extends AuthState {}
+
+final class SginupFailure extends AuthState {}
+
+final class VerfiyOtpSuccess extends AuthState {}
+
+final class VerfiyOtpFailure extends AuthState {}

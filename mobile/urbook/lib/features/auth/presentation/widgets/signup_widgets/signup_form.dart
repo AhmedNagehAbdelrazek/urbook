@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
+import '../../managers/auth_cubit/auth_cubit.dart';
+
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
 
@@ -49,6 +51,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
+    var cubitManager = AuthCubit.get(context);
     var theme = Theme.of(context);
     return Form(
       key: _formKey,
@@ -113,10 +116,20 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(height: 60.0.h),
           CustomElevatedButton(
             text: 'create_account',
-            onPressed: () {
+            onPressed: () async {
               if (_formKey.currentState!.validate()) {
-                Navigator.pushNamed(
-                    context, PageRouteName.emailVerificationView);
+                cubitManager
+                    .signUp(
+                  email: _emailController.text.trim(),
+                  password: _passwordController.text.trim(),
+                  userName: _nameController.text.trim(),
+                )
+                    .then((value) {
+                  if (value) {
+                    Navigator.pushNamed(
+                        context, PageRouteName.emailVerificationView);
+                  }
+                });
               }
             },
           ),

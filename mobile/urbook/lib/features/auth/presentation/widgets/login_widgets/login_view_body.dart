@@ -29,7 +29,7 @@ class LoginViewBody extends StatelessWidget {
           "login",
           style: theme.textTheme.titleLarge,
         ).tr(),
-         SizedBox(height: 15.0.h),
+        SizedBox(height: 15.0.h),
         Row(
           children: [
             Text(
@@ -42,16 +42,16 @@ class LoginViewBody extends StatelessWidget {
                     context, PageRouteName.signupView);
               },
               child: Text(
-                ' signup',
+                'signup',
                 style: theme.textTheme.bodyMedium!
                     .copyWith(color: LightColorPalette.cyan),
               ).tr(),
             ),
           ],
         ),
-         SizedBox(height: 40.0.h),
+        SizedBox(height: 40.0.h),
         const LogInForm(),
-         SizedBox(height: 20.0.h),
+        SizedBox(height: 20.0.h),
         CustomElevatedButton(
           text: 'login_with_google',
           onPressed: () {},
@@ -60,7 +60,7 @@ class LoginViewBody extends StatelessWidget {
           haveIcon: true,
           iconPath: IconPaths.google,
         ),
-         SizedBox(height: 150.h),
+        SizedBox(height: 150.h),
         Align(
           alignment: Alignment.center,
           child: Padding(

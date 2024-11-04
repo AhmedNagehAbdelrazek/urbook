@@ -5,7 +5,7 @@ import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
-import '../../managers/auth_cubit/login_cubit.dart';
+import '../../managers/auth_cubit/auth_cubit.dart';
 
 class LogInForm extends StatefulWidget {
   const LogInForm({super.key});
@@ -46,6 +46,7 @@ class _LogInFormState extends State<LogInForm> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var cubitManager = AuthCubit.get(context);
+
     return Form(
       key: _formKey,
       child: Column(
@@ -120,9 +121,8 @@ class _LogInFormState extends State<LogInForm> {
                 )
                     .then((value) {
                   if (value) {
-                    print("77777777777777777777777777777777");
-                  } else {
-                    print("999999999999999999999999999999");
+                    Navigator.pushReplacementNamed(
+                        context, PageRouteName.layoutView);
                   }
                 });
               }

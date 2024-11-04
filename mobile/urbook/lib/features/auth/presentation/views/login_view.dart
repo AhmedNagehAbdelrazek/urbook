@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/widgets/app_bar.dart';
-import 'package:urbook/features/auth/presentation/managers/auth_cubit/login_cubit.dart';
+import 'package:urbook/features/auth/presentation/managers/auth_cubit/auth_cubit.dart';
 import 'package:urbook/features/auth/presentation/widgets/login_widgets/login_view_body.dart';
 
 class LoginView extends StatefulWidget {

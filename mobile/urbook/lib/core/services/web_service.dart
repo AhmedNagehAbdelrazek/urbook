@@ -16,10 +16,12 @@ class WebService {
   Dio freeDio = Dio();
   Dio tokenDio = Dio();
 
+  String? myEmail;
   String lang = 'en';
   String? myToken;
   final String storageKeyMobileToken = 'Authorization';
   final String tokenKey = 'auth_token';
+  final String emailKey = 'auth_email';
 
   WebService._() {
     freeDio.options.connectTimeout = const Duration(milliseconds: 300);
@@ -29,6 +31,7 @@ class WebService {
     tokenDio.options.baseUrl = Constants.domain;
     _initializeDioInterceptor();
     _loadToken();
+    _loadEmail();
   }
 
   void _initializeDioInterceptor() {
@@ -106,5 +109,22 @@ class WebService {
   Future<void> clearToken() async {
     myToken = null;
     await _storage.delete(key: tokenKey);
+  }
+
+  Future<void> saveEmail(String email) async {
+    myEmail = email;
+    await _storage.write(key: emailKey, value: email);
+  }
+
+  
+  Future<void> _loadEmail() async {
+    myEmail = await _storage.read(key: emailKey);
+    debugPrint('Loaded email: $myEmail');
+  }
+
+  
+  Future<void> clearEmail() async {
+    myEmail = null;
+    await _storage.delete(key: emailKey);
   }
 }
