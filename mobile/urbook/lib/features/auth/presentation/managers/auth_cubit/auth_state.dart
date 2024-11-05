@@ -15,3 +15,7 @@ final class SginupFailure extends AuthState {}
 final class VerfiyOtpSuccess extends AuthState {}
 
 final class VerfiyOtpFailure extends AuthState {}
+
+final class ForgotPasswordSuccess extends AuthState {}
+
+final class ForgotPasswordFailure extends AuthState {}

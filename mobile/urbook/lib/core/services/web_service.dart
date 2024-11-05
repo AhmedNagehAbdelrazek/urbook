@@ -19,6 +19,7 @@ class WebService {
   String? myEmail;
   String lang = 'en';
   String? myToken;
+  final String resetTokenKey = 'reset_token';
   final String storageKeyMobileToken = 'Authorization';
   final String tokenKey = 'auth_token';
   final String emailKey = 'auth_email';
@@ -116,15 +117,29 @@ class WebService {
     await _storage.write(key: emailKey, value: email);
   }
 
-  
   Future<void> _loadEmail() async {
     myEmail = await _storage.read(key: emailKey);
     debugPrint('Loaded email: $myEmail');
   }
 
-  
   Future<void> clearEmail() async {
     myEmail = null;
     await _storage.delete(key: emailKey);
+  }
+
+  Future<void> saveResetToken(String token) async {
+    await _storage.write(key: resetTokenKey, value: token);
+    debugPrint('Saved reset token: $token');
+  }
+
+  Future<String?> loadResetToken() async {
+    String? token = await _storage.read(key: resetTokenKey);
+    debugPrint('Loaded reset token: $token');
+    return token;
+  }
+
+  Future<void> clearResetToken() async {
+    await _storage.delete(key: resetTokenKey);
+    debugPrint('Cleared reset token');
   }
 }

@@ -8,6 +8,7 @@ abstract class AuthDataSource {
       required String password,
       required String userName});
   Future<Response> verfiyOtp({required String verfiyOtp});
+  Future<Response> forgotPassword({required String email});
 }
 
 class AuthOnlineDataSource extends AuthDataSource {
@@ -50,6 +51,14 @@ class AuthOnlineDataSource extends AuthDataSource {
         "email": _webService.myEmail,
         "otp": verfiyOtp,
       },
+    );
+  }
+
+  @override
+  Future<Response> forgotPassword({required String email}) async {
+    return await _dio.post(
+      "/api/auth/forgotpassword",
+      data: {"email": email},
     );
   }
 }

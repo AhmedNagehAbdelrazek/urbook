@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
+import '../../managers/auth_cubit/auth_cubit.dart';
+
 class EmailConfirmationForm extends StatefulWidget {
   const EmailConfirmationForm({super.key});
 
@@ -29,6 +31,7 @@ class _EmailConfirmationFormState extends State<EmailConfirmationForm> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var cubitManager = AuthCubit.get(context);
     return Form(
       key: _formKey,
       child: Column(
@@ -38,7 +41,7 @@ class _EmailConfirmationFormState extends State<EmailConfirmationForm> {
             "email",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-           SizedBox(height: 8.0.h),
+          SizedBox(height: 8.0.h),
           TextFormField(
             controller: _emailController,
             decoration: InputDecoration(
@@ -48,15 +51,25 @@ class _EmailConfirmationFormState extends State<EmailConfirmationForm> {
             ),
             validator: _validateEmail,
           ),
-           SizedBox(height: 16.0.h),
-           SizedBox(height: 30.0.h),
+          SizedBox(height: 16.0.h),
+          SizedBox(height: 30.0.h),
           CustomElevatedButton(
             text: 'send',
-            onPressed: () {
+            onPressed: () async {
               if (_formKey.currentState!.validate()) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Processing Data')),
-                );
+                cubitManager
+                    .forgotPassword(email: _emailController.text.trim())
+                    .then((value) {
+                  if (value) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("success")),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("fail")),
+                    );
+                  }
+                });
               }
             },
           ),

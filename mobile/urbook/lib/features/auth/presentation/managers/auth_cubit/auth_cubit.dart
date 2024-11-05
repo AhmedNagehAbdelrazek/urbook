@@ -5,6 +5,7 @@ import 'package:urbook/core/services/web_service.dart';
 import 'package:urbook/features/auth/data/data_source/auth/Auth_data_source.dart';
 import 'package:urbook/features/auth/data/repositories_imp/auth_repository_imp.dart';
 import 'package:urbook/features/auth/domain/repositories/auth_repository.dart';
+import 'package:urbook/features/auth/domain/usecases/forgot_password_use_case.dart';
 import 'package:urbook/features/auth/domain/usecases/login_use_case.dart';
 import 'package:urbook/features/auth/domain/usecases/signin_use_case.dart';
 import 'package:urbook/features/auth/domain/usecases/verfiy_otp_use_case.dart';
@@ -20,6 +21,7 @@ class AuthCubit extends Cubit<AuthState> {
   late LoginUseCase _loginUseCase;
   late SignUpUseCase _signUpUseCase;
   late VerfiyOtpUseCase _verfiyOtpUseCase;
+  late ForgotPasswordUseCase _forgotPasswordUseCase;
 
   Future<bool> login({required String email, required String password}) async {
     _authDataSource = AuthOnlineDataSource(_webService.freeDio);
@@ -81,5 +83,24 @@ class AuthCubit extends Cubit<AuthState> {
       emit(VerfiyOtpSuccess());
       return Future.value(true);
     });
+  }
+
+  Future<bool> forgotPassword({required String email}) async {
+    _authDataSource = AuthOnlineDataSource(_webService.freeDio);
+    _authRepository = AuthRepositoryImp(_authDataSource);
+    _forgotPasswordUseCase = ForgotPasswordUseCase(_authRepository);
+    final result = await _forgotPasswordUseCase.execute(email: email);
+    return result.fold(
+      (fail) {
+        var error = fail as ServerFailure;
+        log(error.errMessage);
+        emit(ForgotPasswordFailure());
+        return Future.value(false);
+      },
+      (data) {
+        emit(ForgotPasswordSuccess());
+        return Future.value(true);
+      },
+    );
   }
 }
