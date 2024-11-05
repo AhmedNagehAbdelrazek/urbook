@@ -67,7 +67,6 @@ class AuthRepositoryImp implements AuthRepository {
     try {
       final response = await _authDataSource.verfiyOtp(verfiyOtp: otp);
       if (response.statusCode == 200) {
-        _webService.saveResetToken(response.data["token"]);
         return const Right(true);
       } else {
         return Left(
@@ -88,6 +87,7 @@ class AuthRepositoryImp implements AuthRepository {
     try {
       final response = await _authDataSource.forgotPassword(email: email);
       if (response.statusCode == 200) {
+        _webService.saveResetToken(response.data["token"]);
         return const Right(true);
       } else {
         return Left(
@@ -98,6 +98,31 @@ class AuthRepositoryImp implements AuthRepository {
       }
     } on DioException catch (error) {
       return Left(ServerFailure.fromDioException(error));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> resetPassword(
+      {required String newPassword}) async {
+    try {
+      final response =
+          await _authDataSource.resetPassword(newPassword: newPassword);
+      if (response.statusCode == 200) {
+        final String token = response.data["token"];
+        _webService.saveToken(token);
+        return const Right(true);
+      } else {
+        return Left(
+          ServerFailure(
+            errMessage: response.data["message"],
+            statusCode: response.statusCode.toString(),
+          ),
+        );
+      }
+    } on DioException catch (error) {
+      return Left(
+        ServerFailure.fromDioException(error),
+      );
     }
   }
 }

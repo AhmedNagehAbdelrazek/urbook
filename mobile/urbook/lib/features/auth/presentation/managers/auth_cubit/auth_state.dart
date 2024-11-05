@@ -19,3 +19,7 @@ final class VerfiyOtpFailure extends AuthState {}
 final class ForgotPasswordSuccess extends AuthState {}
 
 final class ForgotPasswordFailure extends AuthState {}
+
+final class ResetPasswordSuccess extends AuthState {}
+
+final class ResetPasswordFailure extends AuthState {}

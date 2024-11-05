@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:urbook/core/routes/app_views.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
 import '../../managers/auth_cubit/auth_cubit.dart';
@@ -60,15 +61,8 @@ class _EmailConfirmationFormState extends State<EmailConfirmationForm> {
                 cubitManager
                     .forgotPassword(email: _emailController.text.trim())
                     .then((value) {
-                  if (value) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text("success")),
-                    );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text("fail")),
-                    );
-                  }
+                  Navigator.pushNamed(
+                      context, PageRouteName.createPasswordView);
                 });
               }
             },

@@ -51,7 +51,9 @@
     "fashion" : "Fashion" ,
     "furniture" : "Furniture",
     "industrial" : "Industrial",
-    "latest_products" : "Latest Products"
+    "latest_products" : "Latest Products",
+    "passwords_do_not_match" : "Passwords do not match",
+    "please_confirm_your_password" : "Please confirm your password"
     
 
     

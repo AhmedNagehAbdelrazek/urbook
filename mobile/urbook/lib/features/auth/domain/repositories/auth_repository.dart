@@ -10,4 +10,6 @@ abstract class AuthRepository {
       required String userName});
   Future<Either<Failure, bool>> verfiyOtp({required String otp});
   Future<Either<Failure, bool>> forgotPassword({required String email});
+  Future<Either<Failure, bool>> resetPassword({required String newPassword});
+ 
 }

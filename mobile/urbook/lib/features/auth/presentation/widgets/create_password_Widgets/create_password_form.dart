@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
+import '../../managers/auth_cubit/auth_cubit.dart';
 
 class CreatePasswordForm extends StatefulWidget {
   const CreatePasswordForm({super.key});
@@ -29,9 +30,20 @@ class _CreatePasswordFormState extends State<CreatePasswordForm> {
     return null;
   }
 
+  String? _validateConfirmPassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'please_confirm_your_password'.tr();
+    }
+    if (value != _passwordController.text) {
+      return 'passwords_do_not_match'.tr();
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var cubitManager = AuthCubit.get(context);
     return Form(
       key: _formKey,
       child: Column(
@@ -41,7 +53,7 @@ class _CreatePasswordFormState extends State<CreatePasswordForm> {
             "password",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-           SizedBox(height: 8.0.h),
+          SizedBox(height: 8.0.h),
           TextFormField(
             controller: _passwordController,
             obscureText: _obscureText,
@@ -62,17 +74,17 @@ class _CreatePasswordFormState extends State<CreatePasswordForm> {
             ),
             validator: _validatePassword,
           ),
-           SizedBox(height: 30.0.h),
+          SizedBox(height: 30.0.h),
           Text(
             "confirm_password",
             style: theme.textTheme.bodyLarge,
           ).tr(),
-           SizedBox(height: 8.0.h),
+          SizedBox(height: 8.0.h),
           TextFormField(
             controller: _confirmPasswordController,
             obscureText: _obscureText,
             decoration: InputDecoration(
-              labelText: 'password'.tr(),
+              labelText: 'confirm_password'.tr(),
               border: const OutlineInputBorder(),
               hintText: 'enter_your_password'.tr(),
               suffixIcon: IconButton(
@@ -86,18 +98,22 @@ class _CreatePasswordFormState extends State<CreatePasswordForm> {
                 },
               ),
             ),
-            validator: _validatePassword,
+            validator: _validateConfirmPassword,
           ),
-           SizedBox(height: 30.0.h),
+          SizedBox(height: 30.0.h),
           CustomElevatedButton(
             text: 'save',
-            onPressed: () {
+            onPressed: () async {
               if (_formKey.currentState!.validate()) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Processing Data')),
-                );
-                Navigator.pushReplacementNamed(
-                    context, PageRouteName.passwordCreatedSuccessfullyView);
+                cubitManager
+                    .resetPassword(
+                        newPassword: _confirmPasswordController.text.trim())
+                    .then((value) {
+                  if (value) {
+                    Navigator.pushReplacementNamed(
+                        context, PageRouteName.passwordCreatedSuccessfullyView);
+                  }
+                });
               }
             },
           ),
