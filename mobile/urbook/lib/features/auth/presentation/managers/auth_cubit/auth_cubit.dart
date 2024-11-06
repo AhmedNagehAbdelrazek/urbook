@@ -50,7 +50,7 @@ class AuthCubit extends Cubit<AuthState> {
       {required String email,
       required String password,
       required String userName}) async {
-    _authDataSource = AuthOnlineDataSource(_webService.tokenDio);
+    _authDataSource = AuthOnlineDataSource(_webService.freeDio);
     _authRepository = AuthRepositoryImp(_authDataSource);
     _signUpUseCase = SignUpUseCase(_authRepository);
 

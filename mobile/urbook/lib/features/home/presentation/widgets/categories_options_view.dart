@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/constants/image_paths.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 
+import '../../../layout/presentation/views/layout_view.dart';
 import 'category_card.dart';
 
 class CategoriesOptionsView extends StatelessWidget {
@@ -27,7 +28,13 @@ class CategoriesOptionsView extends StatelessWidget {
                     .copyWith(fontWeight: FontWeight.bold),
               ).tr(),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => const LayoutView(initialIndex: 1),
+                    ),
+                  );
+                },
                 child: Text(
                   "see_all",
                   style: theme.textTheme.bodyMedium!
