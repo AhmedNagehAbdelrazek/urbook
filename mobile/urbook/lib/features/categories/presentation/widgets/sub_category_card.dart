@@ -17,7 +17,7 @@ class SubCategoryCard extends StatelessWidget {
     var theme = Theme.of(context);
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, PageRouteName.subCategoriesView,
+        Navigator.pushNamed(context, PageRouteName.productListingView,
             arguments: subCategoryModel);
       },
       child: Column(

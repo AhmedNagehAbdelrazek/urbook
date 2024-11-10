@@ -58,7 +58,9 @@
     "health" : "Health",
     "construction_real_estate" : "Construction & Real Estate",
     "fabrication_service" : "Fabrication Service",
-    "electrical_equipment" : "Electrical Equipment"
+    "electrical_equipment" : "Electrical Equipment",
+    "filter" : "Filter",
+    "apply" : "Apply"
     
 
     
