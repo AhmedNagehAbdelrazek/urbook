@@ -49,27 +49,27 @@ class AppRouter {
           builder: (context) => const LayoutView(),
           settings: settings,
         );
-        case PageRouteName.homeView:
+      case PageRouteName.homeView:
         return MaterialPageRoute(
           builder: (context) => const HomeView(),
           settings: settings,
         );
-        case PageRouteName.wishListView:
+      case PageRouteName.wishListView:
         return MaterialPageRoute(
           builder: (context) => const WishListView(),
           settings: settings,
         );
-        case PageRouteName.profileView:
+      case PageRouteName.profileView:
         return MaterialPageRoute(
           builder: (context) => const ProfileView(),
           settings: settings,
         );
-        case PageRouteName.myCartView:
+      case PageRouteName.myCartView:
         return MaterialPageRoute(
           builder: (context) => const MyCartView(),
           settings: settings,
         );
-        case PageRouteName.categoriesView:
+      case PageRouteName.categoriesView:
         return MaterialPageRoute(
           builder: (context) => const CategoriesView(),
           settings: settings,

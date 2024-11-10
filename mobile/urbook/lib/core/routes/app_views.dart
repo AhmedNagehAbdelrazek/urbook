@@ -13,4 +13,6 @@ export 'package:urbook/features/onboarding/presentation/views/onboarding_view.da
 export 'package:urbook/features/profile/presentation/pages/profile_view.dart';
 export 'package:urbook/features/splash/presentation/views/splash_view.dart';
 export 'package:urbook/features/wish_list/presentation/pages/wish_list_view.dart';
+export 'package:urbook/features/categories/presentation/pages/product_listing_view.dart';
+export 'package:urbook/features/categories/presentation/pages/sub_categories_view.dart';
 export 'page_route_name.dart';

@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:urbook/core/routes/app_views.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/features/categories/data/models/category_model.dart';
 
@@ -10,8 +11,12 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, PageRouteName.subCategoriesView,
+            arguments: categoryModel);
+      },
       child: Card(
         color: LightColorPalette.white,
         elevation: 10,
@@ -28,12 +33,10 @@ class CategoryCard extends StatelessWidget {
                 scale: 0.65,
               ),
               const SizedBox(height: 10),
-              Text(
-                categoryModel.categoryName,
-                textAlign: TextAlign.center,
-                style:
-                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-              ).tr(),
+              Text(categoryModel.categoryName,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.bodySmall)
+                  .tr(),
             ],
           ),
         ),
