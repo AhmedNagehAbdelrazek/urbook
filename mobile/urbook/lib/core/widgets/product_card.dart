@@ -17,8 +17,8 @@ class ProductCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.w),
         margin: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.w),
         decoration: BoxDecoration(
-          color: LightColorPalette.grey50,
-          borderRadius: BorderRadius.circular(12),
+          color: LightColorPalette.grey50.withOpacity(0.5),
+          borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +29,7 @@ class ProductCard extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                          color: LightColorPalette.cyan, width: 0.5)),
+                          color: LightColorPalette.black, width: 0.4)),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.network(

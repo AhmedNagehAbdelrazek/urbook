@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'product_card.dart';
+import '../../../../core/widgets/product_card.dart';
 
 class LatestProductsView extends StatelessWidget {
   const LatestProductsView({super.key});

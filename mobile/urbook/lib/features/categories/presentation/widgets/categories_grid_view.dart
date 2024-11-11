@@ -13,7 +13,7 @@ class CategoriesGridView extends StatelessWidget {
       CategoryModel(
           imgPath: ImagePaths.electronics, categoryName: "electronics"),
       CategoryModel(
-          imgPath: ImagePaths.constructionRealState,
+          imgPath: ImagePaths.constructionRealEstate,
           categoryName: "construction_real_estate"),
       CategoryModel(
           imgPath: ImagePaths.fabricationService,

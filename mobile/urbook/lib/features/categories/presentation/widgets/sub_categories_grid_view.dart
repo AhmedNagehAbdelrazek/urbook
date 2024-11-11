@@ -12,7 +12,7 @@ class SubCategoriesGridView extends StatelessWidget {
       SubCategoryModel(
           imgPath: ImagePaths.electronics, subCategoryName: "electronics"),
       SubCategoryModel(
-          imgPath: ImagePaths.constructionRealState,
+          imgPath: ImagePaths.constructionRealEstate,
           subCategoryName: "construction_real_estate"),
       SubCategoryModel(
           imgPath: ImagePaths.fabricationService,

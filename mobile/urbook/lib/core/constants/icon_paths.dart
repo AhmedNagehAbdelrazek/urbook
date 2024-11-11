@@ -1,10 +1,12 @@
 class IconPaths {
-  static const String google = "assets/icons/google.png";
-  static const String category = "assets/icons/category2.png";
-  static const String heart = "assets/icons/heart.png";
-  static const String home = "assets/icons/home2.png";
-  static const String profile = "assets/icons/profile.png";
-  static const String shoppingCart = "assets/icons/shoppingCart.png";
-  static const String search = "assets/icons/search_normal.png";
-  static const String setting = "assets/icons/setting.png";
+  static const _basePath = "assets/icons/";
+
+  static const google = "${_basePath}google.png";
+  static const category = "${_basePath}category2.png";
+  static const heart = "${_basePath}heart.png";
+  static const home = "${_basePath}home2.png";
+  static const profile = "${_basePath}profile.png";
+  static const shoppingCart = "${_basePath}shoppingCart.png";
+  static const search = "${_basePath}search_normal.png";
+  static const setting = "${_basePath}setting.png";
 }
