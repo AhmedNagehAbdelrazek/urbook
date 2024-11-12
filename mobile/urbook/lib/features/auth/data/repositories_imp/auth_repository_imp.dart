@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:urbook/core/errors/failure.dart';
 import 'package:urbook/core/errors/server_failure.dart';
 import 'package:urbook/core/services/web_service.dart';
