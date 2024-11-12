@@ -16,7 +16,8 @@ class ServerFailure extends Failure {
         break;
 
       case DioExceptionType.badResponse:
-        errMessage = _handleServerError(exception.response?.statusCode);
+        errMessage = exception.response?.data["message"] ??
+            _handleServerError(exception.response?.statusCode);
         break;
 
       case DioExceptionType.cancel:
@@ -48,7 +49,9 @@ class ServerFailure extends Failure {
       case 503:
         return 'Service unavailable. Try again later.';
       default:
-        return 'Unexpected server error. Status code: $statusCode';
+        return statusCode != null
+            ? 'Unexpected server error. Status code: $statusCode'
+            : 'Unexpected server error with unknown status.';
     }
   }
 }

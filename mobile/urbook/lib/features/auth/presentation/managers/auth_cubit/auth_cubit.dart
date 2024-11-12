@@ -31,21 +31,22 @@ class AuthCubit extends Cubit<AuthState> {
     _authDataSource = AuthOnlineDataSource(_webService.freeDio);
     _authRepository = AuthRepositoryImp(_authDataSource);
     _loginUseCase = LoginUseCase(_authRepository);
-    final result =
-        await _loginUseCase.execute(email: email, password: password);
+
+    EasyLoading.show();
+    var result = await _loginUseCase.execute(email: email, password: password);
 
     return result.fold(
-      (fail) async {
+      (fail) {
+        EasyLoading.dismiss();
         var error = fail as ServerFailure;
-        SnackBarService.showErrorMessage(error.errMessage ?? "");
-        log(error.errMessage);
+        SnackBarService.showErrorMessage(error.errMessage);
         emit(LoginFailure());
         return Future.value(false);
       },
-      (data) async {
+      (data) {
+        EasyLoading.dismiss();
         SnackBarService.showSuccessMessage("Success");
         emit(LoginSuccess());
-
         return Future.value(true);
       },
     );
@@ -74,7 +75,7 @@ class AuthCubit extends Cubit<AuthState> {
       (data) {
         EasyLoading.dismiss();
         SnackBarService.showSuccessMessage("Success");
-        emit(LoginSuccess());
+        emit(SginupSuccess());
 
         return Future.value(true);
       },

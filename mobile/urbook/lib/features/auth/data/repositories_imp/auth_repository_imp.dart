@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:urbook/core/errors/failure.dart';
 import 'package:urbook/core/errors/server_failure.dart';
 import 'package:urbook/core/services/web_service.dart';
@@ -16,6 +17,7 @@ class AuthRepositoryImp implements AuthRepository {
     try {
       final response =
           await _authDataSource.login(email: email, password: password);
+
       if (response.statusCode == 200) {
         final String token = response.data["token"];
         _webService.saveToken(token);
