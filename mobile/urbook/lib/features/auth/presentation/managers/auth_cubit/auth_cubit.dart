@@ -1,6 +1,8 @@
 import 'dart:developer';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:urbook/core/errors/server_failure.dart';
+import 'package:urbook/core/services/snackbar_service.dart';
 import 'package:urbook/core/services/web_service.dart';
 import 'package:urbook/features/auth/data/data_source/auth/Auth_data_source.dart';
 import 'package:urbook/features/auth/data/repositories_imp/auth_repository_imp.dart';
@@ -33,14 +35,17 @@ class AuthCubit extends Cubit<AuthState> {
         await _loginUseCase.execute(email: email, password: password);
 
     return result.fold(
-      (fail) {
+      (fail) async {
         var error = fail as ServerFailure;
+        SnackBarService.showErrorMessage(error.errMessage ?? "");
         log(error.errMessage);
         emit(LoginFailure());
         return Future.value(false);
       },
-      (data) {
+      (data) async {
+        SnackBarService.showSuccessMessage("Success");
         emit(LoginSuccess());
+
         return Future.value(true);
       },
     );
@@ -53,19 +58,24 @@ class AuthCubit extends Cubit<AuthState> {
     _authDataSource = AuthOnlineDataSource(_webService.freeDio);
     _authRepository = AuthRepositoryImp(_authDataSource);
     _signUpUseCase = SignUpUseCase(_authRepository);
-
+    EasyLoading.show();
     final result = await _signUpUseCase.execute(
         email: email, password: password, userName: userName);
 
     return result.fold(
       (fail) {
+        EasyLoading.dismiss();
         var error = fail as ServerFailure;
+        SnackBarService.showErrorMessage(error.errMessage ?? "");
         log(error.errMessage);
         emit(SginupFailure());
         return Future.value(false);
       },
       (data) {
+        EasyLoading.dismiss();
+        SnackBarService.showSuccessMessage("Success");
         emit(LoginSuccess());
+
         return Future.value(true);
       },
     );
@@ -75,14 +85,20 @@ class AuthCubit extends Cubit<AuthState> {
     _authDataSource = AuthOnlineDataSource(_webService.freeDio);
     _authRepository = AuthRepositoryImp(_authDataSource);
     _verfiyOtpUseCase = VerfiyOtpUseCase(_authRepository);
+    EasyLoading.show();
     final result = await _verfiyOtpUseCase.execute(otp: otp);
     return result.fold((fail) {
+      EasyLoading.dismiss();
       var error = fail as ServerFailure;
+      SnackBarService.showErrorMessage(error.errMessage ?? "");
       log(error.errMessage);
       emit(VerfiyOtpFailure());
       return Future.value(false);
     }, (data) {
+      EasyLoading.dismiss();
+      SnackBarService.showSuccessMessage("Success");
       emit(VerfiyOtpSuccess());
+
       return Future.value(true);
     });
   }
@@ -91,16 +107,22 @@ class AuthCubit extends Cubit<AuthState> {
     _authDataSource = AuthOnlineDataSource(_webService.freeDio);
     _authRepository = AuthRepositoryImp(_authDataSource);
     _forgotPasswordUseCase = ForgotPasswordUseCase(_authRepository);
+    EasyLoading.show();
     final result = await _forgotPasswordUseCase.execute(email: email);
     return result.fold(
       (fail) {
+        EasyLoading.dismiss();
         var error = fail as ServerFailure;
+        SnackBarService.showErrorMessage(error.errMessage ?? "");
         log(error.errMessage);
         emit(ForgotPasswordFailure());
         return Future.value(false);
       },
       (data) {
+        EasyLoading.dismiss();
+        SnackBarService.showSuccessMessage("Success");
         emit(ForgotPasswordSuccess());
+
         return Future.value(true);
       },
     );
@@ -110,16 +132,21 @@ class AuthCubit extends Cubit<AuthState> {
     _authDataSource = AuthOnlineDataSource(_webService.freeDio);
     _authRepository = AuthRepositoryImp(_authDataSource);
     _resetPasswordUseCase = ResetPasswordUseCase(_authRepository);
+    EasyLoading.show();
     final result =
         await _resetPasswordUseCase.execute(newPassword: newPassword);
     return result.fold(
       (fail) {
+        EasyLoading.dismiss();
         var error = fail as ServerFailure;
+        SnackBarService.showErrorMessage(error.errMessage ?? "");
         log(error.errMessage);
         emit(ResetPasswordFailure());
         return Future.value(false);
       },
       (data) {
+        EasyLoading.dismiss();
+        SnackBarService.showSuccessMessage("Success");
         emit(ResetPasswordSuccess());
         return Future.value(true);
       },

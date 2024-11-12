@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/constants/image_paths.dart';
 import '../widgets/on_boarding_Screen.dart';
@@ -22,7 +23,7 @@ class _OnboardingViewState extends State<OnboardingView> {
     var theme = Theme.of(context);
     return Scaffold(
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Container(
           padding: EdgeInsets.only(bottom: mediaQuery.height * 0.18),
           child: PageView(
@@ -53,7 +54,7 @@ class _OnboardingViewState extends State<OnboardingView> {
         ),
       ),
       bottomSheet: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: OnboardingBottomSheet(
           mediaQuery: mediaQuery,
           isLastPage: isLastPage,

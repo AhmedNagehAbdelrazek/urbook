@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/constants/icon_paths.dart';
 import 'package:urbook/features/categories/data/models/sub_category_model.dart';
 import 'package:urbook/features/categories/presentation/widgets/product_listing_grid_view.dart';
@@ -25,7 +26,7 @@ class _ProductListingViewState extends State<ProductListingView> {
       appBar: AppBar(
         title: _isSearching
             ? SizedBox(
-                height: 50,
+                height: 45.h,
                 width: double.infinity,
                 child: TextField(
                   controller: _searchController,
@@ -68,7 +69,7 @@ class _ProductListingViewState extends State<ProductListingView> {
       _isSearching = !_isSearching;
       if (!_isSearching) {
         _searchController.clear();
-        _performSearch(''); 
+        _performSearch('');
       }
     });
   }
