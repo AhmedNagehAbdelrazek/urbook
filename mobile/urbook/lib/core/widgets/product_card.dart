@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/constants/icon_paths.dart';
 import 'package:urbook/core/themes/color_palette.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -27,16 +28,22 @@ class ProductCard extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                          color: LightColorPalette.black, width: 0.4)),
+                    borderRadius: BorderRadius.circular(12),
+                    border:
+                        Border.all(color: LightColorPalette.black, width: 0.4),
+                  ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
-                    child: Image.network(
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe99Qmooaqix7uhJmJCZ6teDP6NDvT8VwgWQ&s',
+                    child: CachedNetworkImage(
+                      imageUrl:
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe99Qmooaqix7uhJmJCZ6teDP6NDvT8VwgWQ&s',
                       fit: BoxFit.cover,
                       height: 100.h,
                       width: double.infinity,
+                      placeholder: (context, url) =>
+                          const Center(child: CircularProgressIndicator()),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
                     ),
                   ),
                 ),
@@ -54,11 +61,12 @@ class ProductCard extends StatelessWidget {
             ),
             SizedBox(height: 8.h),
             Text(
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                "phone 34rtrttdtytyufdftdfghghghghh",
-                style: theme.textTheme.bodyMedium!
-                    .copyWith(fontWeight: FontWeight.w700)),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              "phone 34rtrttdtytyufdftdfghghghghh",
+              style: theme.textTheme.bodyMedium!
+                  .copyWith(fontWeight: FontWeight.w700),
+            ),
             Text(
               "\$345",
               style: theme.textTheme.bodySmall!
