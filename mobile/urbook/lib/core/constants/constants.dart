@@ -1,5 +1,5 @@
 class Constants {
   static const String fontName = 'PlusJakartaSans';
   static const String translationPath = 'assets/translation';
-  static const String domain = 'http://192.168.1.12:8000';
+  static const String domain = 'https://urbook-server-production.up.railway.app';
 }

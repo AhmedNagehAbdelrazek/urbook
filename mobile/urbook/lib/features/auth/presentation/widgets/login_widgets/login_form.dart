@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
+import 'package:urbook/main.dart';
 
 import '../../managers/auth_cubit/auth_cubit.dart';
 
@@ -121,8 +123,8 @@ class _LogInFormState extends State<LogInForm> {
                 )
                     .then((value) {
                   if (value) {
-                    Navigator.pushReplacementNamed(
-                        context, PageRouteName.layoutView);
+                    navigatorKey.currentState?.pushNamedAndRemoveUntil(
+                        PageRouteName.layoutView, (route) => false);
                   }
                 });
               }

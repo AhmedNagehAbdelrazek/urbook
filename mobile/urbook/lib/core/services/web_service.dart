@@ -17,7 +17,7 @@ class WebService {
   Dio tokenDio = Dio();
 
   String? myEmail;
-  String? myResetToken;  
+  String? myResetToken;
   String lang = 'en';
   String? myToken;
   final String resetTokenKey = 'reset_token';
@@ -44,7 +44,8 @@ class WebService {
       InterceptorsWrapper(
         onRequest: (options, handler) {
           options.headers["Content-Type"] = "application/json";
-          debugPrint('send request : BaseURL:${options.baseUrl} path:${options.path}');
+          debugPrint(
+              'send request : BaseURL:${options.baseUrl} path:${options.path}');
           debugPrint('headers:${options.headers}');
           debugPrint('query parameters:${options.queryParameters}');
           debugPrint('data:${options.data}');
@@ -64,6 +65,8 @@ class WebService {
           debugPrint('error: ${e.error}');
           debugPrint('message: ${e.message}');
           debugPrint('type: ${e.type}');
+          log(e.response!.data.toString());
+          return handler.next(e);
         },
       ),
     );
@@ -92,6 +95,7 @@ class WebService {
           debugPrint('error: ${e.error}');
           debugPrint('message: ${e.message}');
           debugPrint('type: ${e.type}');
+          return handler.next(e);
         },
       ),
     );
@@ -127,23 +131,20 @@ class WebService {
     await _storage.delete(key: emailKey);
   }
 
-  
   Future<void> saveResetToken(String token) async {
     myResetToken = token;
     await _storage.write(key: resetTokenKey, value: token);
     debugPrint('Saved reset token: $token');
   }
 
-  
   Future<void> loadResetToken() async {
     myResetToken = await _storage.read(key: resetTokenKey);
     debugPrint('Loaded reset token: $myResetToken');
   }
 
-  
   Future<void> clearResetToken() async {
     await _storage.delete(key: resetTokenKey);
-    myResetToken = null;  
+    myResetToken = null;
     debugPrint('Cleared reset token');
   }
 }

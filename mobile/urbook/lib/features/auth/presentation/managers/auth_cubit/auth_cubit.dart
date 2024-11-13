@@ -34,7 +34,7 @@ class AuthCubit extends Cubit<AuthState> {
 
     EasyLoading.show();
     var result = await _loginUseCase.execute(email: email, password: password);
-
+    log(result.toString());
     return result.fold(
       (fail) {
         EasyLoading.dismiss();

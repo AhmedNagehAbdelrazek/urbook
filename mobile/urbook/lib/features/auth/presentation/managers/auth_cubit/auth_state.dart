@@ -1,6 +1,6 @@
 part of 'auth_cubit.dart';
 
-sealed class AuthState {}
+abstract class AuthState {}
 
 final class AuthInitial extends AuthState {}
 
