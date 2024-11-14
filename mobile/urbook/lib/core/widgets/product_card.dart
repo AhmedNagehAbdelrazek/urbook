@@ -112,8 +112,9 @@ class ProductCard extends StatelessWidget {
         Text(
           "\$456",
           style: theme.textTheme.bodySmall!.copyWith(
-              fontWeight: FontWeight.w700,
-              decoration: TextDecoration.lineThrough),
+              fontWeight: FontWeight.w800,
+              decoration: TextDecoration.lineThrough,
+              color: BaseColorPalette.red),
         ),
       ],
     );
