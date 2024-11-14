@@ -6,17 +6,26 @@ class ShimmerService extends StatelessWidget {
       {super.key,
       required this.width,
       required this.height,
-      required this.shapeBorder});
+      required this.shapeBorder,
+      this.circular = 25});
   final double width;
   final double height;
+  final double circular;
   final ShapeBorder shapeBorder;
 
-  const ShimmerService.rectangular(
-      {required this.width, required this.height, super.key})
-      : shapeBorder = const RoundedRectangleBorder();
+  ShimmerService.rectangular(
+      {required this.width,
+      required this.height,
+      super.key,
+      this.circular = 15})
+      : shapeBorder = RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(circular));
 
   const ShimmerService.circular(
-      {required this.width, required this.height, super.key})
+      {required this.width,
+      required this.height,
+      super.key,
+      this.circular = 25})
       : shapeBorder = const CircleBorder();
 
   @override
