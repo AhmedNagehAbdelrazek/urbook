@@ -9,7 +9,7 @@ class SnackBarService {
     BotToast.showCustomNotification(
       toastBuilder: (void Function() cancelFunc) {
         return Material(
-          color: Colors.white.withOpacity(0.5),
+          color: Colors.transparent,
           child: Container(
             width: double.maxFinite,
             height: msg.length > 80 ? 100 : 75,
@@ -99,7 +99,7 @@ class SnackBarService {
                         height: double.infinity,
                         width: 10,
                         decoration: const BoxDecoration(
-                            color: Color(0xFF46c234),
+                            color: LightColorPalette.cyan,
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(12),
                               bottomLeft: Radius.circular(12),

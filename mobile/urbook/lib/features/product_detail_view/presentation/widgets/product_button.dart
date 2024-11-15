@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:urbook/core/services/snackbar_service.dart';
 import 'package:urbook/core/themes/color_palette.dart';
 import 'package:urbook/core/widgets/custom_elevated_button.dart';
 
@@ -26,7 +27,10 @@ class ProductButton extends StatelessWidget {
         SizedBox(width: 8.w),
         Expanded(
           child: CustomElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              SnackBarService.showSuccessMessage(
+                  "The product has been added to your cart");
+            },
             text: 'add_to_cart',
             haveIcon: true,
             iconPath: IconPaths.shoppingCart,
