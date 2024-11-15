@@ -30,4 +30,5 @@ class ImagePaths {
   static const fabricationService = '${_basePath}fabrication_service.png';
   static const health = '${_basePath}health (2).png';
   static const homeDecor = '${_basePath}home_decor.png';
+  static const testImage = '${_basePath}test_image.png'; 
 }

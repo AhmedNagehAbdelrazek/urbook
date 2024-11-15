@@ -16,6 +16,7 @@ class PageRouteName {
   static const String wishListView = '/wishListView';
   static const String productListingView = '/productListingView';
   static const String subCategoriesView = '/wishListView';
+ static const String productDetailView = '/productDetailView';
   
   
 

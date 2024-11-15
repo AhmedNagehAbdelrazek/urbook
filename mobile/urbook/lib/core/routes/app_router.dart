@@ -74,6 +74,11 @@ class AppRouter {
           builder: (context) => const CategoriesView(),
           settings: settings,
         );
+      case PageRouteName.productDetailView:
+        return MaterialPageRoute(
+          builder: (context) =>  ProductDetailView(),
+          settings: settings,
+        );
       default:
         return MaterialPageRoute(
           builder: (context) => OnboardingView(),

@@ -60,7 +60,12 @@
     "fabrication_service" : "Fabrication Service",
     "electrical_equipment" : "Electrical Equipment",
     "filter" : "Filter",
-    "apply" : "Apply"
+    "apply" : "Apply",
+    "buy_now" : "Buy Now" , 
+    "add_to_cart":"Add To Cart",
+    "color" : "Color",
+    "quantity" : "Quantity",
+    "read_more" : "Read More"
     
 
     

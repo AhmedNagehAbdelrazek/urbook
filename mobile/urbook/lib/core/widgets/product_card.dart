@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:urbook/core/constants/icon_paths.dart';
+import 'package:urbook/core/routes/page_route_name.dart';
 import 'package:urbook/core/services/shimmer_service.dart';
 
 import '../themes/color_palette.dart';
@@ -19,7 +20,11 @@ class ProductCard extends StatelessWidget {
     var theme = Theme.of(context);
 
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        isLoading
+            ? null
+            : Navigator.pushNamed(context, PageRouteName.productDetailView);
+      },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.w),
         margin: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.w),

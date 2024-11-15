@@ -10,7 +10,7 @@ class ApplicationThemeManager {
     primaryColorLight: LightColorPalette.cyan50,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        side: const BorderSide(color: LightColorPalette.black, width: 1),
+        side: const BorderSide(color: LightColorPalette.cyan, width: 1),
         backgroundColor: LightColorPalette.black,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),

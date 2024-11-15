@@ -1,4 +1,3 @@
-
 export 'package:urbook/features/auth/presentation/views/create_password_view.dart';
 export 'package:urbook/features/auth/presentation/views/email_confirmation_view.dart';
 export 'package:urbook/features/auth/presentation/views/email_verification_view.dart';
@@ -15,4 +14,5 @@ export 'package:urbook/features/splash/presentation/views/splash_view.dart';
 export 'package:urbook/features/wish_list/presentation/pages/wish_list_view.dart';
 export 'package:urbook/features/categories/presentation/pages/product_listing_view.dart';
 export 'package:urbook/features/categories/presentation/pages/sub_categories_view.dart';
+export 'package:urbook/features/product_detail_view/presentation/pages/product_detail_view.dart';
 export 'page_route_name.dart';
