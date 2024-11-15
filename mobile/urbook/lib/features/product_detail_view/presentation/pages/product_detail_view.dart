@@ -2,13 +2,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:urbook/core/constants/icon_paths.dart';
 import 'package:urbook/core/constants/image_paths.dart';
 import 'package:urbook/core/themes/color_palette.dart';
-import 'package:urbook/core/widgets/build_color_option.dart';
-import 'package:urbook/core/widgets/build_tag.dart';
-import 'package:urbook/core/widgets/custom_elevated_button.dart';
-
+import 'package:urbook/features/product_detail_view/presentation/widgets/product_button.dart';
+import 'package:urbook/features/product_detail_view/presentation/widgets/product_colors.dart';
+import 'package:urbook/features/product_detail_view/presentation/widgets/product_rates.dart';
+import '../widgets/product_app_bar.dart';
 import '../widgets/top_curve_clipper.dart';
 
 class ProductDetailView extends StatefulWidget {
@@ -28,20 +27,7 @@ class _ProductDetailViewState extends State<ProductDetailView> {
     var theme = Theme.of(context);
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.favorite_border),
-            onPressed: () {},
-          ),
-        ],
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+      appBar: productAppBar(context),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,14 +87,7 @@ class _ProductDetailViewState extends State<ProductDetailView> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      buildTag(context, text: "Top Rated", color: Colors.blue),
-                      const SizedBox(width: 8),
-                      buildTag(context,
-                          text: "Free Shipping", color: Colors.green),
-                    ],
-                  ),
+                  const ProductRates(),
                   const SizedBox(height: 8),
                   Text(
                     'Loop Silicone Strong Magnetic Watch',
@@ -158,15 +137,7 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                     style: theme.textTheme.bodyMedium,
                   ).tr(),
                   SizedBox(height: 12.h),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      buildColorOption(Colors.black),
-                      buildColorOption(Colors.blue),
-                      buildColorOption(Colors.purple),
-                      buildColorOption(Colors.grey),
-                    ],
-                  ),
+                  const ProductColors(),
                   SizedBox(height: 16.h),
                   Text(
                     'Quantity',
@@ -179,53 +150,33 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                       color: Colors.white,
                       border: Border.all(color: Colors.black, width: 0.4),
                     ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        IconButton(
-                          onPressed: quantity > 1
-                              ? () => setState(() => quantity--)
-                              : null,
-                          icon: const Icon(Icons.remove),
-                        ),
-                        Text(quantity.toString()),
-                        IconButton(
-                          onPressed: () => setState(() => quantity++),
-                          icon: const Icon(Icons.add),
-                        ),
-                      ],
-                    ),
+                    child: addQuantity(),
                   ),
                   SizedBox(height: 80.h),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: CustomElevatedButton(
-                          onPressed: () {},
-                          text: 'buy_now',
-                          hight: 50,
-                          backGroundColor: LightColorPalette.white,
-                          textColor: LightColorPalette.black,
-                        ),
-                      ),
-                      SizedBox(width: 8.w),
-                      Expanded(
-                        child: CustomElevatedButton(
-                          onPressed: () {},
-                          text: 'add_to_cart',
-                          haveIcon: true,
-                          iconPath: IconPaths.shoppingCart,
-                          hight: 50,
-                        ),
-                      ),
-                    ],
-                  ),
+                  const ProductButton(),
                 ],
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Row addQuantity() {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        IconButton(
+          onPressed: quantity > 1 ? () => setState(() => quantity--) : null,
+          icon: const Icon(Icons.remove),
+        ),
+        Text(quantity.toString()),
+        IconButton(
+          onPressed: () => setState(() => quantity++),
+          icon: const Icon(Icons.add),
+        ),
+      ],
     );
   }
 }
