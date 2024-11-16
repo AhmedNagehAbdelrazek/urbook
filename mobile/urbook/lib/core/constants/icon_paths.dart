@@ -9,4 +9,5 @@ class IconPaths {
   static const shoppingCart = "${_basePath}shoppingCart.png";
   static const search = "${_basePath}search_normal.png";
   static const setting = "${_basePath}setting.png";
+  static const trash = "${_basePath}trash2.png";
 }

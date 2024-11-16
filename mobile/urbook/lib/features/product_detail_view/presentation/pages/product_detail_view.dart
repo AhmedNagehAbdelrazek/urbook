@@ -127,10 +127,10 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                       });
                     },
                     child: Text(
-                      isDescriptionExpanded ? 'Read less' : 'Read more',
+                      isDescriptionExpanded ? 'read_more' : 'read_less',
                       style: theme.textTheme.bodySmall!
                           .copyWith(color: LightColorPalette.cyan),
-                    ),
+                    ).tr(),
                   ),
                   Text(
                     'color',
